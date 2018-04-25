@@ -13,7 +13,7 @@ import safety.com.br.android_shake_detector.core.ShakeOptions;
 public class HomeActivity extends AppCompatActivity /*implements ShakeDetector.Listener*/ {
 
     private static final String TAG = "HomeActivity";
-    private ShakeDetector shakeDetector;
+    ShakeDetector shakeDetector;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +38,17 @@ public class HomeActivity extends AppCompatActivity /*implements ShakeDetector.L
             }
         });
 
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        shakeDetector.destroy(getBaseContext());
+        super.onDestroy();
     }
 
     /*@Override

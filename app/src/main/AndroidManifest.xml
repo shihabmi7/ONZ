@@ -28,6 +28,8 @@
                 <action android:name="shake.detector" />
             </intent-filter>
         </receiver>
+
+        <activity android:name=".WakeUpActivity" android:screenOrientation="portrait"/>
     </application>
 
 

@@ -12,6 +12,11 @@ public class ShakeReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         if (null != intent && intent.getAction().equals("shake.detector")) {
             Log.d(TAG, "ShakeReceiver CALLED");
+
+            Intent newAct = new Intent(context, WakeUpActivity.class);
+            newAct.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(newAct);
+//            Log.d(TAG," Called..");
         }
     }
 }
